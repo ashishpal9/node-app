@@ -32,12 +32,12 @@ on:
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: my-node-app           # set this to your Amazon ECR repository name
-  ECS_SERVICE: my-node-svc-1                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: my-node-cluster-1                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: my-task-dfi # set this to the path to your Amazon ECS task definition
+  ECR_REPOSITORY: cicd-node-app          # set this to your Amazon ECR repository name
+  ECS_SERVICE: cicd-node-app                # set this to your Amazon ECS service name
+  ECS_CLUSTER: cicd-node-app                # set this to your Amazon ECS cluster name
+  ECS_TASK_DEFINITION: cicd-node-app # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: node-app           # set this to the name of the container in the
+  CONTAINER_NAME: cicd-node-app          # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
 permissions:
@@ -56,8 +56,8 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: AKIASW5KSI4TYJQCKAEE
-        aws-secret-access-key: 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
+        aws-access-key-id: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_ACCESS_KEY }}
         aws-region: us-east-1
 
     - name: Login to Amazon ECR
