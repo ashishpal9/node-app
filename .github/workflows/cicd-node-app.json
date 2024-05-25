@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:186651920167:task-definition/my-task-dfi:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:058264095685:task-definition/cicd-node-app:1",
     "containerDefinitions": [
         {
-            "name": "node-app",
-            "image": "186651920167.dkr.ecr.us-east-1.amazonaws.com/my-node-app:latest",
+            "name": "cicd-node-app",
+            "image": "058264095685.dkr.ecr.us-east-1.amazonaws.com/cicd-node-app:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "node-app-3000-tcp",
+                    "name": "cicd-node-app-3000-tcp",
                     "containerPort": 3000,
                     "hostPort": 3000,
                     "protocol": "tcp",
@@ -24,7 +24,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/my-task-dfi",
+                    "awslogs-group": "/ecs/cicd-node-app",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -33,8 +33,8 @@
             "systemControls": []
         }
     ],
-    "family": "my-task-dfi",
-    "executionRoleArn": "arn:aws:iam::186651920167:role/ecsTaskExecutionRole",
+    "family": "cicd-node-app",
+    "executionRoleArn": "arn:aws:iam::058264095685:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
     "volumes": [],
@@ -79,8 +79,8 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-05-25T07:39:14.123Z",
-    "registeredBy": "arn:aws:iam::186651920167:user/cloud_user",
+    "registeredAt": "2024-05-25T09:20:55.903Z",
+    "registeredBy": "arn:aws:iam::058264095685:user/cloud_user",
     "tags": []
 }
 JSON
